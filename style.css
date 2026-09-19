@@ -1,0 +1,567 @@
+:root{
+    --bg: #0d0d0d;
+    --surface: #161616;
+    --surface-2: #1e1e1e;
+    --line: #2a2a2a;
+    --text: #f0f0f0;
+    --muted: #9a9a9a;
+    --ferrari-red: #c00000;
+    --ferrari-red-dark: #8a0000;
+    --ferrari-red-dim: rgba(192, 0, 0, 0.08);
+    --ferrari-red-glow: rgba(192, 0, 0, 0.15);
+    --white: #f5f5f5;
+    --white-dim: rgba(245, 245, 245, 0.06);
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.6;
+    background-image:
+        radial-gradient(circle at 15% 40%, rgba(192, 0, 0, 0.04) 0%, transparent 55%),
+        radial-gradient(circle at 85% 70%, rgba(192, 0, 0, 0.025) 0%, transparent 45%);
+    background-attachment:fixed;
+}
+@media (prefers-reduced-motion: reduce){ *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important;} }
+
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:960px;margin:0 auto;padding:0 28px;}
+
+/* NAV */
+header{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:blur(14px);
+    background:rgba(13,13,13,0.92);
+    border-bottom:2px solid var(--ferrari-red);
+    box-shadow: 0 2px 40px rgba(192, 0, 0, 0.05);
+}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 28px;max-width:960px;margin:0 auto;}
+.logo{
+    font-family:var(--font-display);
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:0.12em;
+    color:var(--white);
+    text-transform:uppercase;
+}
+.logo span{
+    color:var(--ferrari-red);
+    font-weight:700;
+}
+.logo::after{
+    content: '—';
+    color: var(--ferrari-red);
+    margin-left: 10px;
+    font-weight:300;
+}
+.navlinks{display:flex;gap:32px;font-family:var(--font-mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;}
+.navlinks a{
+    position:relative;
+    transition:color 0.3s ease;
+}
+.navlinks a::after{
+    content:'';
+    position:absolute;
+    bottom:-4px;
+    left:50%;
+    transform:translateX(-50%);
+    width:0;
+    height:1.5px;
+    background:var(--ferrari-red);
+    transition:width 0.3s ease;
+}
+.navlinks a:hover{
+    color:var(--white);
+}
+.navlinks a:hover::after{
+    width:100%;
+}
+.navlinks a:focus-visible{outline:1px solid var(--ferrari-red);outline-offset:4px;}
+
+/* HERO */
+.hero{padding:120px 0 80px;position:relative;overflow:hidden;}
+.hero::before{
+    content:'';
+    position:absolute;
+    right:-250px;
+    top:-150px;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle, rgba(192,0,0,0.05) 0%, transparent 65%);
+    pointer-events:none;
+}
+.hero::after{
+    content:'';
+    position:absolute;
+    left:-150px;
+    bottom:-100px;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle, rgba(192,0,0,0.03) 0%, transparent 60%);
+    pointer-events:none;
+}
+.eyebrow{
+    font-family:var(--font-mono);
+    font-size:10px;
+    color:var(--ferrari-red);
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:24px;
+}
+.eyebrow::before{
+    content:'';
+    width:32px;
+    height:1.5px;
+    background:var(--ferrari-red);
+}
+.eyebrow::after{
+    content:'';
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:var(--ferrari-red);
+    box-shadow: 0 0 20px rgba(192, 0, 0, 0.3);
+    animation:pulse 2.5s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.2;}}
+
+h1{
+    font-family:var(--font-display);
+    font-weight:700;
+    font-size:clamp(34px,6vw,58px);
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    max-width:720px;
+    color:var(--white);
+}
+h1 .highlight{
+    color:var(--ferrari-red);
+}
+.role{
+    font-family:var(--font-display);
+    font-size:clamp(17px,2.4vw,20px);
+    color:var(--white);
+    margin-top:16px;
+    font-weight:400;
+    letter-spacing:0.03em;
+    opacity:0.7;
+}
+.role::before{
+    content:'◆ ';
+    color:var(--ferrari-red);
+    font-size:14px;
+}
+.hero p.desc{
+    margin-top:22px;
+    max-width:560px;
+    color:var(--muted);
+    font-size:15.5px;
+    border-left:2px solid var(--ferrari-red);
+    padding-left:22px;
+}
+.hero-cta{display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;}
+
+.btn{
+    font-family:var(--font-mono);
+    font-size:11px;
+    padding:14px 30px;
+    border-radius:3px;
+    border:1px solid var(--line);
+    transition:all 0.3s ease;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    font-weight:500;
+    cursor:pointer;
+}
+.btn.primary{
+    background:var(--ferrari-red);
+    color:#ffffff;
+    border-color:var(--ferrari-red);
+}
+.btn.primary:hover{
+    background:var(--ferrari-red-dark);
+    border-color:var(--ferrari-red-dark);
+    transform:translateY(-2px);
+    box-shadow:0 8px 35px rgba(192,0,0,0.25);
+}
+.btn.ghost{
+    border-color:var(--white);
+    color:var(--white);
+    opacity:0.6;
+}
+.btn.ghost:hover{
+    opacity:1;
+    border-color:var(--ferrari-red);
+    color:var(--ferrari-red);
+    transform:translateY(-2px);
+}
+
+.wave{margin-top:60px;width:100%;height:60px;}
+.wave path{
+    fill:none;
+    stroke:var(--ferrari-red);
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:1400;
+    stroke-dashoffset:1400;
+    animation:draw 2.8s ease-out forwards, glowFerrari 3.5s ease-in-out 2.8s infinite;
+}
+@keyframes draw{to{stroke-dashoffset:0;}}
+@keyframes glowFerrari{
+    0%,100%{opacity:0.5;}
+    50%{opacity:1;filter:drop-shadow(0 0 12px rgba(192,0,0,0.2));}
+}
+
+/* SECTION SHELL */
+section{padding:80px 0;border-top:1px solid var(--line);}
+.ch{
+    font-family:var(--font-mono);
+    font-size:10px;
+    color:var(--muted);
+    letter-spacing:0.12em;
+    margin-bottom:6px;
+    text-transform:uppercase;
+}
+.ch b{color:var(--ferrari-red);}
+h2{
+    font-family:var(--font-display);
+    font-size:clamp(24px,3.4vw,32px);
+    margin-bottom:34px;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--white);
+}
+h2::after{
+    content:'';
+    display:block;
+    width:36px;
+    height:2px;
+    background:var(--ferrari-red);
+    margin-top:10px;
+}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;}
+.about-grid p{color:var(--muted);font-size:15.5px;}
+.about-grid p + p{margin-top:14px;}
+.stat-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:20px 24px;
+    transition:all 0.3s ease;
+    position:relative;
+    overflow:hidden;
+}
+.stat-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:3px;
+    height:100%;
+    background:var(--ferrari-red);
+}
+.stat-card:hover{
+    border-color:var(--ferrari-red);
+    transform:translateX(4px);
+}
+.stat-card + .stat-card{margin-top:14px;}
+.stat-num{
+    font-family:var(--font-mono);
+    font-size:26px;
+    color:var(--ferrari-red);
+    font-weight:600;
+}
+.stat-label{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:4px;
+    letter-spacing:0.02em;
+}
+@media(max-width:720px){.about-grid{grid-template-columns:1fr;}}
+
+/* TIMELINE */
+.tl-item{
+    position:relative;
+    padding-left:30px;
+    border-left:1.5px solid var(--line);
+    padding-bottom:40px;
+}
+.tl-item:last-child{padding-bottom:0;}
+.tl-item::before{
+    content:'';
+    position:absolute;
+    left:-5.5px;
+    top:4px;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--ferrari-red);
+}
+.tl-item:hover::before{
+    background:var(--ferrari-red);
+    box-shadow:0 0 30px rgba(192,0,0,0.25);
+}
+.tl-date{
+    font-family:var(--font-mono);
+    font-size:10px;
+    color:var(--ferrari-red);
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+}
+.tl-role{
+    font-family:var(--font-display);
+    font-size:18px;
+    font-weight:600;
+    margin-top:4px;
+    color:var(--white);
+}
+.tl-org{
+    color:var(--muted);
+    font-size:13.5px;
+    margin-top:2px;
+    letter-spacing:0.02em;
+}
+.tl-desc{
+    color:var(--muted);
+    font-size:14.5px;
+    margin-top:10px;
+    max-width:600px;
+}
+
+/* PROJECTS */
+.project-feature{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:34px;
+    margin-bottom:24px;
+    position:relative;
+    overflow:hidden;
+    transition:all 0.3s ease;
+}
+.project-feature:hover{
+    border-color:var(--ferrari-red);
+    transform:translateY(-2px);
+    box-shadow:0 8px 40px rgba(0,0,0,0.3);
+}
+.project-feature::after{
+    content:'';
+    position:absolute;
+    right:-60px;
+    top:-60px;
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(192,0,0,0.05), transparent 70%);
+    pointer-events:none;
+}
+.tag{
+    display:inline-block;
+    font-family:var(--font-mono);
+    font-size:9px;
+    color:var(--white);
+    border:1px solid var(--ferrari-red);
+    border-radius:2px;
+    padding:3px 12px;
+    margin-bottom:14px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    background:var(--ferrari-red-dim);
+}
+.project-feature h3{
+    font-family:var(--font-display);
+    font-size:22px;
+    margin-bottom:10px;
+    color:var(--white);
+}
+.project-feature p{color:var(--muted);font-size:15px;max-width:620px;}
+.metrics{display:flex;gap:28px;margin-top:20px;flex-wrap:wrap;}
+.metric b{
+    font-family:var(--font-mono);
+    color:var(--ferrari-red);
+    font-size:20px;
+    display:block;
+}
+.metric span{font-size:11.5px;color:var(--muted);letter-spacing:0.02em;}
+
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:720px){.proj-grid{grid-template-columns:1fr;}}
+.proj-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:24px;
+    transition:all 0.35s ease;
+    position:relative;
+}
+.proj-card:hover{
+    border-color:var(--ferrari-red);
+    transform:translateY(-3px);
+    box-shadow:0 8px 35px rgba(0,0,0,0.35);
+}
+.proj-card h4{
+    font-family:var(--font-display);
+    font-size:16.5px;
+    margin-bottom:8px;
+    color:var(--white);
+}
+.proj-card h4 a{
+    color:var(--white);
+    transition:color 0.3s ease;
+}
+.proj-card h4 a:hover{
+    color:var(--ferrari-red);
+}
+.proj-card p{color:var(--muted);font-size:13.8px;}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+.stack span{
+    font-family:var(--font-mono);
+    font-size:9.5px;
+    color:var(--muted);
+    border:1px solid var(--line);
+    padding:3px 10px;
+    border-radius:2px;
+    transition:all 0.3s ease;
+}
+.proj-card:hover .stack span{
+    border-color:var(--ferrari-red);
+    color:var(--white);
+}
+
+/* SKILLS */
+.skill-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+@media(max-width:720px){.skill-groups{grid-template-columns:1fr 1fr;}}
+.skill-groups h5{
+    font-family:var(--font-mono);
+    font-size:9px;
+    color:var(--ferrari-red);
+    letter-spacing:0.1em;
+    margin-bottom:12px;
+    text-transform:uppercase;
+}
+.skill-groups ul{list-style:none;}
+.skill-groups li{
+    font-size:14px;
+    padding:6px 0;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    padding-left:18px;
+    color:var(--muted);
+    transition:color 0.3s ease;
+}
+.skill-groups li::before{
+    content:'—';
+    position:absolute;
+    left:0;
+    color:var(--ferrari-red);
+    font-size:12px;
+}
+.skill-groups li:hover{
+    color:var(--white);
+}
+
+/* EDUCATION */
+.edu-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:28px 32px;
+    transition:all 0.3s ease;
+}
+.edu-card:hover{
+    border-color:var(--ferrari-red);
+}
+.edu-card h3{
+    font-family:var(--font-display);
+    font-size:18px;
+    color:var(--white);
+}
+.edu-card .tl-date{
+    margin-top:4px;
+    color:var(--muted);
+    font-size:10px;
+}
+.gpa{
+    font-family:var(--font-mono);
+    color:var(--ferrari-red);
+    font-weight:600;
+}
+.cert-list{margin-top:24px;display:flex;flex-direction:column;gap:12px;}
+.cert-item{
+    display:flex;
+    gap:16px;
+    align-items:baseline;
+    font-size:14.5px;
+    color:var(--muted);
+    padding:10px 18px;
+    border-left:2px solid var(--line);
+    transition:all 0.3s ease;
+}
+.cert-item:hover{
+    border-color:var(--ferrari-red);
+    padding-left:22px;
+}
+.cert-item b{color:var(--white);font-weight:500;}
+.cert-year{
+    font-family:var(--font-mono);
+    font-size:10px;
+    color:var(--ferrari-red);
+    min-width:36px;
+    font-weight:600;
+}
+
+/* CONTACT */
+.contact-block{text-align:left;}
+.contact-block p{
+    border-left:2px solid var(--ferrari-red);
+    padding-left:20px;
+    color:var(--muted);
+}
+.contact-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;}
+.contact-links a{
+    font-family:var(--font-mono);
+    font-size:11.5px;
+    border:1px solid var(--line);
+    padding:12px 24px;
+    border-radius:3px;
+    transition:all 0.3s ease;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--muted);
+}
+.contact-links a:hover{
+    border-color:var(--ferrari-red);
+    color:var(--white);
+    transform:translateY(-2px);
+    box-shadow:0 6px 25px rgba(192,0,0,0.08);
+}
+
+footer{
+    padding:30px 0;
+    text-align:center;
+    font-family:var(--font-mono);
+    font-size:10px;
+    color:var(--muted);
+    border-top:2px solid var(--ferrari-red);
+    letter-spacing:0.06em;
+}
+footer::before{
+    content:'◈ ';
+    color:var(--ferrari-red);
+}
+footer::after{
+    content:' ◈';
+    color:var(--ferrari-red);
+}

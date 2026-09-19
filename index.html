@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surya Satya Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">IKSSD<span>.dev</span></div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<div class="wrap hero">
+  <div class="eyebrow">Available for entry-level AI / Data roles or Junior Software Engineering</div>
+  <h1>I Kadek Surya Satya Dharma</h1>
+  <div class="role">ML Engineer — Signal, Vision & Data Pipelines</div>
+  <p class="desc">Computer Science graduate skilled in building end-to-end data pipelines, AI/ML solutions, and 
+    software engineering systems through to deployment. Focused on translating technical complexity into actionable business insights.</p>
+  <div class="hero-cta">
+    <a href="#projects" class="btn primary">Projects</a>
+    <a href="#contact" class="btn ghost">Contact me</a>
+  </div>
+  <svg class="wave" viewBox="0 0 900 90" preserveAspectRatio="none">
+    <path d="M0,45 L60,45 L75,15 L95,75 L115,45 L160,45 L175,30 L190,60 L205,45 L260,45 L280,10 L300,80 L320,45 L380,45 L395,35 L410,55 L425,45 L480,45 L500,20 L520,70 L540,45 L600,45 L615,32 L630,58 L645,45 L700,45 L720,12 L740,78 L760,45 L820,45 L835,30 L850,60 L865,45 L900,45"/>
+  </svg>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="ch"><b>CH.01</b> — ABOUT</div>
+    <h2>Summary</h2>
+    <div class="about-grid">
+      <div>
+        <p>Informatics Engineering Graduate at Universitas Brawijaya (GPA: 3.74/4.00) with a strong track record of transforming raw data 
+          and signals into scalable machine learning models, including multi-channel EEG, video proctoring, and F1 telemetry data.</p>
+        <p>End-to-End Capabilities: Experienced across signal preprocessing, architecture design (CNN, EfficientNetV2), 
+          and model deployment and monitoring using Docker, MLflow, and Prometheus/Grafana.</p>
+      </div>
+      <div>
+        <div class="stat-card"><div class="stat-num">97.39%</div><div class="stat-label">EEG Emotion Classification Accuracy (Undergraduate Thesis)</div></div>
+        <div class="stat-card"><div class="stat-num">3.74</div><div class="stat-label">GPA From 4.00, Fakultas Ilmu Komputer</div></div>
+        <div class="stat-card"><div class="stat-num">38</div><div class="stat-label">Mentored students as a Teaching Assistant for Advanced AI Practical Courses</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="ch"><b>CH.02</b> — EXPERIENCE</div>
+    <h2>Working and Intern Experience</h2>
+
+    <div class="tl-item">
+      <div class="tl-date">Feb 2025 — Mei 2025</div>
+      <div class="tl-role">Data Analyst</div>
+      <div class="tl-org">Information System Laboratory, Universitas Brawijaya · Malang, Indonesia</div>
+      <div class="tl-desc">Developed an AI-powered exam proctoring system to detect academic dishonesty in real-time, 
+        integrating computer vision models for anomaly detection.</div>
+      <div class="tl-desc">Architected and prototyped an end-to-end proctoring system that processes video streams to automatically flag suspicious behaviors.</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">Feb 2025 — Jun 2025</div>
+      <div class="tl-role">Teaching Assistant — Advanced Artificial Intelligence</div>
+      <div class="tl-org">Faculty of Computer Science, Universitas Brawijaya · Malang, Indonesia</div>
+      <div class="tl-desc">Guided 38 students through interactive lab sessions, covering core Deep Learning concepts, architectural design, and practical model implementation.</div>
+      <div class="tl-desc">Designed hands-on programming assignments and evaluated student projects to ensure practical understanding of AI workflows.</div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="ch"><b>CH.03</b> — PROJECTS</div>
+    <h2>Featured Projects</h2>
+
+    <div class="project-feature">
+      <span class="tag">Undergraduate Thesis</span>
+      <h3>EEG Emotion Classification</h3>
+      <p>A PyTorch-based 1D-CNN model for classifying human emotional states directly from multi-channel EEG signal data recorded during gaming sessions (GAMEEMO dataset). Feature extraction uses Nonlinear Mode Decomposition (NMD), with DWT as a comparative baseline.</p>
+      <div class="metrics">
+        <div class="metric"><b>97.39%</b><span>Best classification accuracy</span></div>
+        <div class="metric"><b>1D-CNN</b><span>Conv1d × 3 + FC × 4</span></div>
+        <div class="metric"><b>PyTorch</b><span>Main framework</span></div>
+      </div>
+    </div>
+
+    <div class="proj-grid">
+      <a href="https://github.com/Suryy16/PTIIKInsight" target="_blank" rel="noopener noreferrer" class="proj-card-link">
+        <div class="proj-card">
+          <h4>PTIIKInsight — Topic Modelling with MLOps</h4>
+          <p>An automated data pipeline using Crawl4AI to scrape unstructured text, processed through topic modelling. Complete MLOps infrastructure with experiment tracking and real-time monitoring, plus an interactive analytics dashboard.</p>
+          <div class="stack"><span>Docker</span><span>MLflow</span><span>Prometheus</span><span>Grafana</span><span>Streamlit</span></div>
+        </div>
+      </a>
+
+      <a href="https://github.com/Suryy16/f1-pitstop-pipeline" target="_blank" rel="noopener noreferrer" class="proj-card-link">
+        <div class="proj-card">
+          <h4>F1 Pitstop — Data Engineering</h4>
+          <p>A predictive model for estimating optimal pit stop times based on real-time race conditions, simulating strategic decisions. An interactive Streamlit dashboard for telemetry and race metrics.</p>
+          <div class="stack"><span>Python</span><span>Streamlit</span><span>Data Engineering</span></div>
+        </div>
+      </a>
+
+      <a href="https://github.com/Suryy16/skin-type-detector" target="_blank" rel="noopener noreferrer" class="proj-card-link">
+        <div class="proj-card">
+          <h4>Skinalyze — Skin Type Detector</h4>
+          <p>Fine-tuning EfficientNetV2 on a custom dataset of 10,000+ facial selfie photos for automatic skin type classification, achieving &gt;90% accuracy. Integrated into a mobile app prototype for real-time inference.</p>
+          <div class="stack"><span>EfficientNetV2</span><span>Computer Vision</span><span>Mobile</span></div>
+        </div>
+      </a>
+
+      <a href="https://github.com/tolerra" target="_blank" rel="noopener noreferrer" class="proj-card-link">
+        <div class="proj-card">
+          <h4>Tolerra App — Colorblind-Friendly Web App</h4>
+          <p>A scalable RESTful API built with Laravel and PostgreSQL to manage course categories, chapters, and content. Backend query optimization for fast and accessible content delivery.</p>
+          <div class="stack"><span>Laravel</span><span>PostgreSQL</span><span>REST API</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="ch"><b>CH.04</b> — SKILLS</div>
+    <h2>Technical Skills</h2>
+    <div class="skill-groups">
+      <div>
+        <h5>Languages & Backend</h5>
+        <ul><li>Python</li><li>Golang</li><li>FastAPI</li><li>SQL (PostgreSQL, MySQL)</li></ul>
+      </div>
+      <div>
+        <h5>Machine Learning</h5>
+        <ul><li>TensorFlow</li><li>PyTorch</li><li>Computer Vision</li><li>Signal Processing</li></ul>
+      </div>
+      <div>
+        <h5>Infra & Tooling</h5>
+        <ul><li>Docker</li><li>Git</li><li>Prometheus & Grafana</li><li>GCP</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="ch"><b>CH.05</b> — EDUCATION & ACHIEVEMENTS</div>
+    <h2>Education and Achievements</h2>
+    <div class="edu-card">
+      <h3>Universitas Brawijaya — Malang, Indonesia</h3>
+      <div class="tl-date">Jul 2022 — Aug 2026</div>
+      <p style="margin-top:10px;color:var(--muted);font-size:14.5px;">Bachelor of Computer Science · IPK <span class="gpa">3.74/4.00</span><br>Skripsi: Emotion Classification Using Electroencephalography Signals with Feature Extraction Based on Nonlinear Mode Decomposition and Convolutional Neural Network</p>
+    </div>
+
+    <div class="cert-list">
+      <div class="cert-item"><span class="cert-year">2025</span><div><b>Applied Machine Learning Certification</b> — Dicoding. Predictive analytics, sentiment analysis, computer vision, recommendation systems.</div></div>
+      <div class="cert-item"><span class="cert-year">2025</span><div><b>Machine Learning Development Certification</b> — Dicoding. Deep Learning untuk teks & citra, CV, NLP, model deployment.</div></div>
+      <div class="cert-item"><span class="cert-year">2024</span><div><b>4th Winner</b> — IFEST Web Development Competition, Universitas Padjadjaran.</div></div>
+      <div class="cert-item"><span class="cert-year">2022</span><div><b>1st Place</b> — PKM KC Dekan Cup, Faculty of Computer Science, Universitas Brawijaya.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-block">
+    <div class="ch"><b>CH.06</b> — CONTACT</div>
+    <h2>Mari Terhubung</h2>
+    <p style="color:var(--muted);max-width:520px;">Open to entry-level opportunities in AI, Data, Software Engineering, DevOps, and Data Engineering. Feel free to reach out through any of the following channels.</p>
+    <div class="contact-links">
+      <a href="mailto:sursat.dh@gmail.com">sursat.dh@gmail.com</a>
+      <a href="tel:+6281239140465">+62 812-3914-0465</a>
+      <a href="https://www.linkedin.com/in/surya-satya" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/Suryy16/" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Bali, Indonesia — Built by I Kadek Surya Satya Dharma
+</footer>
+
+</body>
+</html>
